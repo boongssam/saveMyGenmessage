@@ -1,0 +1,7 @@
+# Windows batch/script files must keep CRLF line endings, or cmd misreads them
+# (especially with Korean text). This also applies to GitHub ZIP downloads.
+# .bat/.cmd are stored byte-for-byte (already CRLF) so every download gets CRLF.
+*.bat -text
+*.cmd -text
+*.ps1 text eol=crlf
+*.vbs text eol=crlf

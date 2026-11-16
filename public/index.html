@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>쪽지보관함</title>
+  <link rel="icon" href="/icon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/icon.svg" alt="" width="28" height="28">
+      <h1>쪽지보관함</h1>
+    </div>
+    <p class="status" id="status">불러오는 중…</p>
+    <div class="topbar-actions">
+      <button class="btn" id="collectBtn" title="메신저에서 새 쪽지를 지금 가져옵니다">지금 가져오기</button>
+      <a class="btn" id="exportBtn" href="/api/export.csv" title="현재 검색 결과를 엑셀(CSV)로 저장">엑셀로 저장</a>
+      <button class="btn btn-ghost" id="logoutBtn">잠그기</button>
+    </div>
+  </header>
+
+  <section class="filters" aria-label="검색">
+    <div class="tabs" role="tablist">
+      <button role="tab" class="tab active" data-kind="">전체</button>
+      <button role="tab" class="tab" data-kind="recv">받은 쪽지</button>
+      <button role="tab" class="tab" data-kind="send">보낸 쪽지</button>
+    </div>
+    <form id="searchForm" class="search">
+      <input type="search" id="q" placeholder="제목·내용 검색 (여러 단어는 모두 포함)" aria-label="검색어">
+      <input type="text" id="person" placeholder="보낸/받는 사람" aria-label="사람 이름">
+      <label class="date"><span>부터</span><input type="date" id="from"></label>
+      <label class="date"><span>까지</span><input type="date" id="to"></label>
+      <label class="check"><input type="checkbox" id="files"> 첨부 있는 것만</label>
+      <button type="submit" class="btn btn-primary">검색</button>
+      <button type="button" class="btn btn-ghost" id="resetBtn">초기화</button>
+    </form>
+  </section>
+
+  <main class="layout">
+    <section class="list-pane" aria-label="쪽지 목록">
+      <p class="list-count" id="count"></p>
+      <ul class="msg-list" id="list"></ul>
+      <nav class="pager" id="pager"></nav>
+    </section>
+
+    <section class="detail-pane" id="detail" aria-live="polite">
+      <div class="empty">
+        <p>왼쪽 목록에서 쪽지를 고르면 내용이 여기에 보입니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>

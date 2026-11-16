@@ -1,0 +1,8 @@
+{
+  "messengerDir": "C:\\UCWARE\\Gen Messenger 2020",
+  "archiveDir": "C:\\쪽지보관함",
+  "port": 8765,
+  "shortcutName": "쪽지보관함",
+  "taskName": "GenMessengerArchive-Collect",
+  "dailyCollectTime": "16:00"
+}

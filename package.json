@@ -1,0 +1,13 @@
+{
+  "name": "save-genmessenger",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gen Messenger 쪽지를 내 PC에 영구 보관하고 검색하는 도구",
+  "type": "module",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "collect": "node --no-warnings src/collect.mjs",
+    "start": "node --no-warnings src/server.mjs",
+    "test": "node --no-warnings --test test/*.test.mjs"
+  }
+}

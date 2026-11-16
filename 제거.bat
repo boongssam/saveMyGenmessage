@@ -1,0 +1,12 @@
+@echo off
+chcp 65001 >nul
+cd /d "%~dp0"
+echo.
+echo  자동 수집과 바탕화면 아이콘을 제거합니다. (보관된 쪽지는 지우지 않습니다)
+echo.
+choice /c YN /m " 계속할까요"
+if errorlevel 2 goto :end
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\uninstall.ps1"
+:end
+echo.
+pause

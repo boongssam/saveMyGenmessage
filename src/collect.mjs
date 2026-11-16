@@ -10,6 +10,7 @@ import { pipeline } from 'node:stream/promises';
 import { DatabaseSync } from 'node:sqlite';
 import { fileURLToPath } from 'node:url';
 import { loadConfig } from './config.mjs';
+import { notifyCollectFailed } from './notify.mjs';
 import {
   openArchive, parseFileList, MESSAGE_COLUMNS, READER_COLUMNS, SAVED_COLUMNS,
 } from './archive-db.mjs';
@@ -285,6 +286,7 @@ export async function collect(cfg = loadConfig()) {
         `쪽지보관함 수집 중 문제가 생겼습니다.\r\n\r\n${new Date().toLocaleString('ko-KR')}\r\n${err.message}\r\n\r\n` +
         `자세한 기록: ${cfg.logsDir}\r\n다음 수집이 성공하면 이 파일은 자동으로 지워집니다.\r\n`);
     } catch {}
+    if (cfg.notifyOnFailure) notifyCollectFailed(err.message);
     return { ok: false, error: err.message };
   } finally {
     archive.close();

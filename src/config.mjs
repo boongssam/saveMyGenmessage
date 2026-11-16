@@ -49,5 +49,7 @@ export function loadConfig(configPath = process.env.SGM_CONFIG || path.join(PROJ
     lockFile: path.join(archiveDir, '.collect.lock'),
     alertFile: path.join(os.homedir(), 'Desktop', '쪽지보관함 수집 오류.txt'),
     port: raw.port ?? 8765,
+    // Show a Windows popup when a collection fails (set false in config.json to turn off).
+    notifyOnFailure: raw.notifyOnFailure ?? true,
   };
 }

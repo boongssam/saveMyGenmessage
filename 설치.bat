@@ -11,7 +11,7 @@ if errorlevel 1 (
   echo  Node.js 22.13 이상이 설치되어 있는지, config.json의 메신저 경로가 맞는지 확인하세요.
 ) else (
   echo.
-  echo  [완료] 바탕화면의 '쪽지보관함' 아이콘으로 열 수 있습니다.
+  echo  [완료] 바탕화면의 'saveMyGenmessage' 아이콘으로 열 수 있습니다.
 )
 echo.
 pause

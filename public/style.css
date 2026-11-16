@@ -136,6 +136,15 @@ button, input { font: inherit; color: inherit; }
 .form-error { min-height: 1.2em; margin: 0 0 4px; color: var(--warn); font-size: 13px; }
 .login-note { margin: 18px 0 0; color: var(--faint); font-size: 12px; }
 
+/* ---------- footer (maker / contact / copyright) */
+.site-footer { flex: none; padding: 8px 16px; border-top: 1px solid var(--line); background: var(--surface-2); color: var(--muted); font-size: 12px; line-height: 1.6; text-align: center; word-break: keep-all; }
+.site-footer p { margin: 0; }
+.site-footer a { color: var(--text); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.login-page .site-footer { border: 0; background: none; padding: 0; max-width: 420px; }
+.login-page { grid-template-rows: 1fr auto; gap: 20px; }
+.toast { bottom: 72px; }
+
 /* ---------- narrow screens */
 @media (max-width: 860px) {
   .topbar { flex-wrap: wrap; }
@@ -148,7 +157,7 @@ button, input { font: inherit; color: inherit; }
 /* ---------- print: only the open message */
 @media print {
   body { background: #fff; display: block; }
-  .topbar, .filters, .list-pane, .print-btn, .toast { display: none !important; }
+  .topbar, .filters, .list-pane, .print-btn, .toast, .site-footer { display: none !important; }
   .layout { display: block; }
   .detail-pane { overflow: visible; padding: 0; }
   .message-head, .attachments, .readers, .body-frame { border-color: #ccc; }
